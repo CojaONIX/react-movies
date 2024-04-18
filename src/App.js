@@ -1,23 +1,19 @@
 
-import './App.css';
-import axios from 'axios';
-
-console.log(process.env.REACT_APP_OMDB_TEST);
-
-axios.get(process.env.REACT_APP_OMDB_TEST)
-    .then(response => {
-        console.log(response.data);
-    })
-    .catch(error => {
-        console.log(error);
-    });
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./Pages/Home";
 
 const App = () => {
-  return (
-    <>
-      <h1>Test</h1>
-    </>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+
+            </Routes>
+        </BrowserRouter>
+
+    );
 }
 
 export default App;
