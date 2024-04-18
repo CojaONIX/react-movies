@@ -1,11 +1,16 @@
 
 import './App.css';
+import axios from 'axios';
 
 console.log(process.env.REACT_APP_OMDB_TEST);
 
-fetch(process.env.REACT_APP_OMDB_TEST)
-    .then(res => res.json())
-    .then(data => console.log(data));
+axios.get(process.env.REACT_APP_OMDB_TEST)
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 
 const App = () => {
   return (
