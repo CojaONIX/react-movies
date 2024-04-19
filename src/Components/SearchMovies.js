@@ -3,9 +3,15 @@ import axios from "axios";
 
 const SearchMovies = ({onSearchMovies}) => {
 
-    const [inputs, setInputs] = useState({searchString: "", parameter: 's'});
+    const [inputs, setInputs] = useState({searchString: "", parameter: 's', type: 'movie'});
     const searchMovie = () => {
-        axios.get(`${process.env.REACT_APP_OMDB_URL}?${inputs.parameter}=${inputs.searchString}&apikey=${process.env.REACT_APP_OMDB_APY_KEY}`)
+
+        let url = `${process.env.REACT_APP_OMDB_URL}?${inputs.parameter}=${inputs.searchString}&apikey=${process.env.REACT_APP_OMDB_APY_KEY}`;
+        if(inputs.parameter === 's')
+            url = url + `&type=${inputs.type}`;
+        console.log(url);
+
+        axios.get(url)
             .then(response => {
                 onSearchMovies(response.data);
             })
@@ -19,6 +25,10 @@ const SearchMovies = ({onSearchMovies}) => {
         setInputs({...inputs, parameter: parameter});
     }
 
+    const setType = (type) => {
+        setInputs({...inputs, type: type});
+    }
+
     return (
         <>
             <button onClick={() => setParameter('s')} className="btn btn-outline-secondary m-2">S</button>
@@ -26,6 +36,17 @@ const SearchMovies = ({onSearchMovies}) => {
             <button onClick={() => setParameter('i')} className="btn btn-outline-secondary m-2">I</button>
 
             <span>parameter: {inputs.parameter}</span>
+
+            {inputs.parameter === 's'
+                ? <>
+                    <button onClick={() => setType('movie')} className="btn btn-outline-secondary m-2">Movie</button>
+                    <button onClick={() => setType('series')} className="btn btn-outline-secondary m-2">Series</button>
+                    <button onClick={() => setType('episode')} className="btn btn-outline-secondary m-2">Episode</button>
+                    <button onClick={() => setType('game')} className="btn btn-outline-secondary m-2">Game</button>
+                    <span>type: {inputs.type}</span>
+                </>
+                : null}
+
 
             <div className="col-md-4">
                 <label className="form-label">Search:</label>
