@@ -13,6 +13,7 @@ const SearchMovies = ({onSearchMovies}) => {
 
         axios.get(url)
             .then(response => {
+                console.log(response.data);
                 onSearchMovies(response.data);
             })
             .catch(error => {
@@ -44,8 +45,9 @@ const SearchMovies = ({onSearchMovies}) => {
                     <button onClick={() => setType('episode')} className="btn btn-outline-secondary m-2">Episode</button>
                     <button onClick={() => setType('game')} className="btn btn-outline-secondary m-2">Game</button>
                     <span>type: {inputs.type}</span>
-                </>
-                : null}
+                  </>
+                : null
+            }
 
 
             <div className="col-md-4">
