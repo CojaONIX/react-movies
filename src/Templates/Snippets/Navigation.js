@@ -4,7 +4,7 @@ import {Button, Container, Form, Nav, Navbar, NavDropdown} from "react-bootstrap
 const Navigation = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
-            <Container fluid>
+            <Container>
                 <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
