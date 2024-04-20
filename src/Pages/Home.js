@@ -1,7 +1,7 @@
 
 import {useState} from "react";
 import SearchMovies from "../Components/SearchMovies";
-import MovieDetails from "../Components/MovieDetails";
+import MovieDetailsLong from "../Templates/Snippets/MovieDetailsLong";
 import MovieList from "../Components/MovieList";
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
 
             {(movies.hasOwnProperty("Search"))
                 ? <MovieList moviesList={movies} />
-                : <MovieDetails movieDetails={movies} />
+                : <MovieDetailsLong movieDetails={movies} />
             }
 
             <pre>{JSON.stringify(movies, null, 4)}</pre>

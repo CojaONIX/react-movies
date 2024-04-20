@@ -1,6 +1,6 @@
 
 
-const MovieDetails = ({movieDetails}) => {
+const MovieDetailsLong = ({movieDetails}) => {
     return (
         <div className="card-group">
             <div className="card">
@@ -21,11 +21,11 @@ const MovieDetails = ({movieDetails}) => {
                 </div>
 
                 <div className="card-footer d-flex justify-content-end">
-                    <a href={'/video/'} className="btn btn-outline-primary">Details&Play</a>
+                    {/*<button className="btn btn-outline-primary">???</button>*/}
                 </div>
             </div>
         </div>
     )
 }
 
-export default MovieDetails;
+export default MovieDetailsLong;
