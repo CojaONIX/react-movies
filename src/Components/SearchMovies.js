@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 
 const SearchMovies = ({onSearchMovies}) => {
@@ -29,6 +29,11 @@ const SearchMovies = ({onSearchMovies}) => {
     const setType = (type) => {
         setInputs({...inputs, type: type});
     }
+
+    // 8.10 - useEffect ???
+    // useEffect( () => {
+    //     searchMovie('???');
+    // }, [] );
 
     return (
         <>
