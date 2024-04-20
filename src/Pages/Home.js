@@ -9,7 +9,9 @@ const Home = () => {
     const [movies, setMovies] = useState({});
 
     return (
+
         <div className="container">
+
             <h2>OMDB - Movies</h2>
             <hr/>
 
