@@ -3,6 +3,7 @@ import {useState} from "react";
 import SearchMovies from "../Components/SearchMovies";
 import MovieDetailsLong from "../Templates/Snippets/MovieDetailsLong";
 import MovieList from "../Components/MovieList";
+import Search from "../Components/Search";
 
 const Home = () => {
 
@@ -16,6 +17,7 @@ const Home = () => {
             <hr/>
 
             <SearchMovies onSearchMovies={results => setMovies(results)}/>
+            <Search />
 
             <hr/>
 
