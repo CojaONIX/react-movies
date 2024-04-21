@@ -1,6 +1,5 @@
 
 import {useState} from "react";
-import MovieDetails from "../Templates/Snippets/MovieDetails";
 import Search from "../Components/Search";
 import SearchResults from "../Templates/SearchResults";
 
@@ -20,11 +19,10 @@ const Home = () => {
             <hr/>
 
             {(movies.hasOwnProperty("Search"))
-                ? <SearchResults moviesList={movies} />
-                : null
+                ? <SearchResults moviesList={movies}/>
+                : <pre>{JSON.stringify(movies, null, 4)}</pre>
             }
 
-            <pre>{JSON.stringify(movies, null, 4)}</pre>
 
         </div>
     );
