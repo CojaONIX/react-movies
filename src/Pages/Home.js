@@ -1,9 +1,8 @@
 
 import {useState} from "react";
-import SearchMovies from "../Components/SearchMovies";
-import MovieDetailsLong from "../Templates/Snippets/MovieDetailsLong";
-import MovieList from "../Components/MovieList";
+import MovieDetails from "../Templates/Snippets/MovieDetails";
 import Search from "../Components/Search";
+import SearchResults from "../Templates/SearchResults";
 
 const Home = () => {
 
@@ -16,14 +15,13 @@ const Home = () => {
             <h2>OMDB - Movies</h2>
             <hr/>
 
-            <SearchMovies onSearchMovies={results => setMovies(results)}/>
-            <Search />
+            <Search onSearchMovies={results => setMovies(results)}/>
 
             <hr/>
 
             {(movies.hasOwnProperty("Search"))
-                ? <MovieList moviesList={movies} />
-                : <MovieDetailsLong movieDetails={movies} />
+                ? <SearchResults moviesList={movies} />
+                : <MovieDetails movieDetails={movies} />
             }
 
             <pre>{JSON.stringify(movies, null, 4)}</pre>
