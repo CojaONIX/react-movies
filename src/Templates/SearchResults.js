@@ -20,7 +20,7 @@ const SearchResults = ({moviesList}) => {
                                     <Card.Title>imdbID: {movie.imdbID}</Card.Title>
                                 </Card.Body>
                                 <Card.Footer>
-                                    <Button variant="outline-primary" type="button">Details</Button>
+                                    <a href={'/details/' + movie.imdbID} className="btn btn-outline-primary">Details</a>
                                 </Card.Footer>
                             </Card>
                         </CardGroup>

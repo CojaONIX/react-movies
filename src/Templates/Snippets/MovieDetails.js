@@ -12,12 +12,12 @@ const MovieDetails = ({movieDetails}) => {
                 <Card.Img variant="top" src={movieDetails.Poster}/>
                 <Card.Body>
                     <Card.Text>{movieDetails.Plot}</Card.Text>
-                    <Card.Title>imdbID: {movieDetails.imdbID}</Card.Title>
-                    <Card.Subtitle>Type: {movieDetails.Type} - Year: {movieDetails.Year}</Card.Subtitle>
-                    <Card.Subtitle>Genre: {movieDetails.Genre}</Card.Subtitle>
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="outline-primary" type="button">X</Button>
+                    <Card.Title>imdbID: {movieDetails.imdbID}</Card.Title>
+                    <Card.Subtitle>Type: {movieDetails.Type} - Year: {movieDetails.Year}</Card.Subtitle>
+                    <Card.Subtitle>Genre: {movieDetails.Genre}</Card.Subtitle>
                 </Card.Footer>
             </Card>
         </CardGroup>

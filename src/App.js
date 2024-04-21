@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Pages/Home";
 import Navigation from "./Templates/Snippets/Navigation";
 import Footer from "./Templates/Snippets/Footer";
+import Details from "./Pages/Details";
 
 const App = () => {
     return (
@@ -13,7 +14,7 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/page2" element={<h1>Page2</h1>} />
+                    <Route path="/details/:imdbID" element={<Details />} />
 
                 </Routes>
             </BrowserRouter>

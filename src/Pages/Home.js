@@ -21,7 +21,7 @@ const Home = () => {
 
             {(movies.hasOwnProperty("Search"))
                 ? <SearchResults moviesList={movies} />
-                : <MovieDetails movieDetails={movies} />
+                : null
             }
 
             <pre>{JSON.stringify(movies, null, 4)}</pre>
