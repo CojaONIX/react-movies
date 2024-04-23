@@ -23,6 +23,8 @@ const Home = () => {
                 : <pre>{JSON.stringify(movies, null, 4)}</pre>
             }
 
+            <pre>{JSON.stringify(movies, null, 4)}</pre>
+
 
         </div>
     );
