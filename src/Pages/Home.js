@@ -8,7 +8,6 @@ const Home = () => {
     const [movies, setMovies] = useState({});
 
     return (
-
         <div className="container">
 
             <h2>OMDB - Movies</h2>
@@ -22,9 +21,6 @@ const Home = () => {
                 ? <SearchResults moviesList={movies}/>
                 : <pre>{JSON.stringify(movies, null, 4)}</pre>
             }
-
-            <pre>{JSON.stringify(movies, null, 4)}</pre>
-
 
         </div>
     );

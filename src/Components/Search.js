@@ -9,7 +9,6 @@ const Search = ({onSearchMovies}) => {
 
         let url = `${process.env.REACT_APP_OMDB_URL}?s=${inputs.searchString}&type=${inputs.type}&apikey=${process.env.REACT_APP_OMDB_APY_KEY}`;
 
-
         axios.get(url)
             .then(response => {
                 onSearchMovies(response.data);
@@ -31,15 +30,11 @@ const Search = ({onSearchMovies}) => {
 
     return (
         <>
+            <Button onClick={() => setType('movie')} variant='outline-secondary m-2' className={inputs.type === 'movie' ? 'active' : null}>Movie</Button>
+            <Button onClick={() => setType('series')} variant='outline-secondary m-2' className={inputs.type === 'series' ? 'active' : null}>Series</Button>
+            <Button onClick={() => setType('game')} variant='outline-secondary m-2' className={inputs.type === 'game' ? 'active' : null}>Game</Button>
 
-            <Button onClick={() => setType('movie')} variant="outline-secondary m-2">Movie</Button>
-            <Button onClick={() => setType('series')} variant="outline-secondary m-2">Series</Button>
-            <Button onClick={() => setType('episode')} variant="outline-secondary m-2">Episode</Button>
-            <Button onClick={() => setType('game')} variant="outline-secondary m-2">Game</Button>
-            <span>type: {inputs.type}</span>
-
-            <>
-                <Form.Group className="my-3">
+            <Form.Group className="my-3">
                 <FloatingLabel controlId="floatingInput" label="Search:" className="mb-3">
                     <Form.Control type="text" placeholder="Search"
                                   onKeyUp={e => {
@@ -50,10 +45,9 @@ const Search = ({onSearchMovies}) => {
                                   }}
                     />
                 </FloatingLabel>
-                </Form.Group>
+            </Form.Group>
 
-                <Button onClick={searchMovie} variant="outline-success" type="button">Search</Button>
-            </>
+            <Button onClick={searchMovie} variant="outline-success" type="button">Search</Button>
         </>
     );
 };
